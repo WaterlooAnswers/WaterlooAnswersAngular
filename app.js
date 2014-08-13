@@ -17,7 +17,7 @@ app.config(function ($routeProvider) {
 });
 
 app.factory('API', function($http) {
-	var urlBase = "http://localhost:8080/api";
+	var urlBase = "/api";
 
 	var dataFactory = {};
 
