@@ -1,0 +1,19 @@
+  <div class="container">
+    <div class="page-header"><h1>Questions</h1></div>
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <ul class="nav nav-pills text-center">
+        <li ng-class="{active: isActive(1)}"><a href ng-click="switchTab(1)">Most Recent</a></li>
+        <li ng-class="{active: isActive(2)}"><a href ng-click="switchTab(2)">Most Favourited</a></li>
+        <li ng-class="{active: isActive(3)}"><a href ng-click="switchTab(3)">View Categories</a></li>
+        </ul>
+        <br>
+        <div ng-hide="questions.length > 0">Loading...</div>
+        <ul class="list-group" ng-repeat="question in questions">
+          <li class="list-group-item">
+            <span class="badge">{{question.numAnswers + " answer" + (question.numAnswers>1 ? "s" : "")}}</span>
+            <a href=""><h3 style="margin-top:0px">{{question.name}}</h3></a> <p>{{question.description}}</p> <div class="small">Asked by <a href="">{{question.askerName}}</a> in <a href="">{{question.category}}</a> <time class="timeago" datetime="">{{question.timeAsked | timeAgo}}</time></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
