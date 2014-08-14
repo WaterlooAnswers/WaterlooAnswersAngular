@@ -11,6 +11,11 @@ app.config(function ($routeProvider) {
 		controller: 'questionsController'
 	});
 
+    $routeProvider.when('/ask', {
+        templateUrl: 'askquestion.html',
+        controller: 'askController'
+    });
+
 	$routeProvider.otherwise({
 		redirectTo: '/login'
 	});
@@ -31,11 +36,33 @@ app.factory('API', function($http) {
 
 	dataFactory.getUser = function(token) {
 		return $http.get(urlBase + '/user?token=' + token);
-	}
+    };
 
 	dataFactory.getQuestions = function() {
-		return $http.get(urlBase + '/questions')
-	}
+        return $http({
+            method: 'GET',
+            url: urlBase + '/questions',
+            params: {}
+        });
+    };
+
+    dataFactory.getCategories = function () {
+        return $http.get(urlBase + '/categories');
+    };
+
+    dataFactory.postQuestion = function (questionTitle, questionDescription, categoryIndex, token) {
+        return $http({
+            method: 'POST',
+            url: urlBase + '/questions',
+            data: $.param({
+                questionTitle: questionTitle,
+                questionDescription: questionDescription,
+                categoryIndex: categoryIndex,
+                token: token
+            }),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+        });
+    };
 
 	return dataFactory;
 });
@@ -107,11 +134,30 @@ app.controller('questionsController', function($scope, API) {
 				$scope.questions = data;
 			});
 		}
-	}
+    };
 
 	$scope.isActive = function(tab) {
 		return currentTab == tab;
 	}
+
+});
+
+app.controller('askController', function ($scope, Auth, API) {
+    $scope.submit = function () {
+        //submit to api and then redirect
+        console.log($scope.title);
+        API.postQuestion($scope.title, $scope.description, 0, Auth.getToken()).success(function (data, status) {
+            alert('success');
+        }).error(function (data, status) {
+            alert('error: ' + JSON.stringify(data));
+        });
+    };
+
+    $scope.categories = [];
+    API.getCategories().success(function (data, status) {
+        $scope.categories = data;
+    });
+
 
 });
 

@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="page-header"><h1>Ask a Question</h1></div>
+        <form ng-submit="submit()">
+            <div class="form-group">
+                <label>Choose Category
+                    <select class="form-control" name="category" ng-model="categoryChoice">
+                        <option ng-hide="categories.length > 0">Loading categories...</option>
+                        <option ng-repeat="category in categories">{{category.categoryName}}</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-group">
+                <label>Question
+                    <input type="text" class="form-control" name="question" ng-model="title" maxlength="120"/>
+                </label>
+            </div>
+            <div class="form-group">
+                <label>Additional Details
+                    <textarea rows="3" class="form-control" name="text" ng-model="description"
+                              style="resize:vertical;min-height:2em" maxlength="400"></textarea>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-lg submit">Submit</button>
+        </form>
+    </div>
+</div>
