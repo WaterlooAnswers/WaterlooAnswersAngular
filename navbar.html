@@ -9,7 +9,7 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#/profile">{{firstName()}}</a></li>
+                <li ng-show="isLoggedIn()"><a href="#/profile">{{firstName()}}</a></li>
                 <li ng-show="isLoggedIn()"><a href="#/questions">Browse Questions</a></li>
                 <li ng-show="isLoggedIn()"><a href="#/ask">Ask a Question</a></li>
             </ul>
