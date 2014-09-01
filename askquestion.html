@@ -1,12 +1,14 @@
 <div class="container">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-md-8 col-md-offset-2">
         <div class="page-header"><h1>Ask a Question</h1></div>
         <form ng-submit="submit()">
             <div class="form-group">
                 <label>Choose Category
                     <select class="form-control" name="category" ng-model="categoryChoice">
                         <option ng-hide="categories.length > 0">Loading categories...</option>
-                        <option ng-repeat="category in categories">{{category.categoryName}}</option>
+                        <option ng-repeat="category in categories" value="{{category.categoryId}}">
+                            {{category.categoryName}}
+                        </option>
                     </select>
                 </label>
             </div>

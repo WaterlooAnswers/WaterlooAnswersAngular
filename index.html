@@ -1,22 +1,32 @@
 <!doctype html>
 <html ng-app="mainApp">
 <head>
-	<title>Login to Waterloo Answers</title>
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
-	<script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="timeAgo.js"></script>
-  <script src="app.js"></script>
+    <title ng-bind="title"></title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="timeAgo.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
+    <link href="bower_components/angular-loading-bar/build/loading-bar.min.css" rel='stylesheet'/>
+    <script src="angular-flash.js"></script>
+    <script src="app.js"></script>
+    <script src="AppConfig.js"></script>
+    <script src="APIFactory.js"></script>
+    <script src="AuthService.js"></script>
+
 </head>
 <body>
 <div ng-controller="navbarController">
-  <navbar></navbar>
+    <navbar></navbar>
+</div>
+
+<div class="container">
+    <flash:messages></flash:messages>
 </div>
 
 <div ng-view></div>
-
 </body>
 </html>

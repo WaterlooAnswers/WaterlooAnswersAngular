@@ -10,7 +10,13 @@ app.config(function ($routeProvider) {
         title: 'Login to Waterloo Answers'
     });
 
-    $routeProvider.when('/questions', {
+    $routeProvider.when('/signup', {
+        templateUrl: 'signup.html',
+        controller: 'signUpController',
+        title: 'Sign Up for Waterloo Answrs'
+    });
+
+    $routeProvider.when('/', {
         templateUrl: 'questions.html',
         controller: 'questionsController',
         title: 'View Questions'
@@ -28,8 +34,14 @@ app.config(function ($routeProvider) {
         title: 'Waterloo Answers'
     });
 
+    $routeProvider.when('/profile', {
+        templateUrl: 'profile.html',
+        controller: 'profileController',
+        title: 'Your Profile'
+    });
+
     $routeProvider.otherwise({
-        redirectTo: '/login'
+        redirectTo: '/'
     });
 });
 

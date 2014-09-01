@@ -1,0 +1,28 @@
+<div class="container col-md-8 col-md-offset-2">
+
+    <div class="panel panel-default ">
+        <div class="panel-heading text-center panel-title"><h1>{{user.firstName}}</h1></div>
+        <div class="panel-body">
+            <div>
+                <ul><b>Email: </b>{{user.email}}
+                    <br></ul>
+                <ul><b>Joined: </b>{{user.dateJoined | timeAgo}}
+                    <br></ul>
+                <ul ng-show="questions.length > 0"><b>Questions asked:</b><br>
+
+                    <div style="padding-left: 20px;">
+                        <li ng-repeat="question in questions"><a
+                                href="#/question/{{question._id}}">{{question.name}}</a></li>
+                    </div>
+                </ul>
+                <ul ng-show="answers.length > 0"><b>Questions answered:</b><br>
+
+                    <div style="padding-left: 20px;">
+                        <li ng-repeat="answer in answers"><a href="#/question/{{answer.questionId}}">{{answer.questionName}}</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

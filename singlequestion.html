@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>{{question.name}}</h2>
+            </div>
+            <div class="panel-body">
+                {{question.description}}
+            </div>
+            <div class="panel-footer"><em>Asked by <a href>{{question.askerName}}</a> </em> {{question.timeAsked |
+                timeAgo}}
+            </div>
+        </div>
+        <hr>
+
+        <div class="panel panel-primary" ng-repeat="answer in question.answers">
+            <div class="panel-body">
+                {{answer.text}}
+            </div>
+            <div class="panel-footer">
+                <em>Answered by <a href>{{answer.answererName}}</a> <abbr>{{answer.timeAnswered | timeAgo}}</abbr></em>
+            </div>
+        </div>
+        <div ng-hide="question.answers.length > 0">No answers yet.</div>
+
+        <h3>Your Answer: </h3>
+
+        <form role="form" ng-submit="submitAnswer()">
+            <div class="form-group"><input type="text" name="text" class="form-control" ng-model="answerBody"></div>
+            <button type="submit" class="btn btn-success">Answer</button>
+        </form>
+    </div>
+</div>
