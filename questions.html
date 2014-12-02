@@ -8,17 +8,22 @@
                 <li ng-class="{active: isActive(3)}"><a href ng-click="switchTab(3)">View Categories</a></li>
             </ul>
             <br>
-
-            <div ng-hide="questions.length > 0">Loading...</div>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="question in questions">
+                <li class="list-group-item" ng-repeat="category in categories">
+                    <a href="#/categories?categoryName={{category.categoryName}}"><h3 style="margin-top:0px">
+                        {{category.categoryName}}</h3></a>
+                </li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item" ng-hide="categories" ng-repeat="question in questions">
                     <span class="badge">{{question.numAnswers + " answer" + (question.numAnswers==1 ? "" : "s")}}</span>
                     <a href="#/question/{{question.questionId}}"><h3 style="margin-top:0px">{{question.name}}</h3></a>
 
                     <p>{{question.description}}</p>
 
                     <div class="small">
-                        Asked by <a href="">{{question.askerName}}</a> in <a href="">{{question.category}}</a>
+                        Asked by <a href="">{{question.askerName}}</a> in <a
+                            href="#/categories?categoryName={{question.category}}">{{question.category}}</a>
                         <time class="timeago" datetime="">{{question.timeAsked | timeAgo}}</time>
                     </div>
                 </li>

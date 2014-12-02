@@ -35,6 +35,14 @@ app.factory('API', function ($http) {
         });
     };
 
+    dataFactory.getQuestionsForCategory = function (id) {
+        return $http({
+            method: 'GET',
+            url: urlBase + '/questions?categoryId=' + id,
+            params: {}
+        });
+    };
+
     dataFactory.getQuestion = function (questionId) {
         return $http.get(urlBase + '/questions/' + questionId);
     };

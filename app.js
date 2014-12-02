@@ -42,6 +42,7 @@ app.controller('questionsController', function ($scope, API, $location, Auth) {
     }
 	var currentTab = 1;
 	$scope.questions = [];
+    $scope.categories = [];
     API.getQuestions().success(function (data) {
 		$scope.questions = data;
 	});
@@ -49,15 +50,55 @@ app.controller('questionsController', function ($scope, API, $location, Auth) {
 	$scope.switchTab = function(tab) {
 		if(currentTab != tab){
 			currentTab = tab;
-            API.getQuestions().success(function (data) {
-				$scope.questions = data;
-			});
+            if (currentTab === 3) {
+                API.getCategories().success(function (data) {
+                    $scope.categories = data;
+                    $rootScope.categories = data;
+                    $scope.questions = [];
+                });
+            } else {
+                API.getQuestions().success(function (data) {
+                    $scope.questions = data;
+                    $scope.categories = [];
+                });
+            }
 		}
     };
 
 	$scope.isActive = function(tab) {
 		return currentTab == tab;
 	}
+
+});
+
+app.controller('categoryController', function ($scope, $rootScope, $routeParams, API, $location, Auth) {
+    if (Auth.getToken().length < 1) {
+        $location.path("/login");
+    }
+    $scope.categoryName = $routeParams.categoryName;
+    if ($rootScope.categories == null) {
+        API.getCategories().success(function (data) {
+            $rootScope.categories = data;
+            console.log(data);
+            $scope.questions = [];
+            var result = $.grep($rootScope.categories, function (e) {
+                return e.categoryName == $scope.categoryName;
+            })[0].categoryId;
+            console.log(result);
+            API.getQuestionsForCategory(result).success(function (data) {
+                $scope.questions = data;
+            });
+        });
+    } else {
+        $scope.questions = [];
+        var result = $.grep($rootScope.categories, function (e) {
+            return e.categoryName == $scope.categoryName;
+        })[0].categoryId;
+        API.getQuestionsForCategory(result).success(function (data) {
+            $scope.questions = data;
+        });
+    }
+
 
 });
 
@@ -98,6 +139,7 @@ app.controller('askController', function ($scope, Auth, API, flash) {
     $scope.categories = [];
     API.getCategories().success(function (data) {
         $scope.categories = data;
+        $rootScope.categories = data;
     }).error(function () {
         $scope.categories.push({categoryId: -1, categoryName: "error, reload page"});
     });

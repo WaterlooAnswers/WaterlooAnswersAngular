@@ -34,6 +34,12 @@ app.config(function ($routeProvider) {
         title: 'Waterloo Answers'
     });
 
+    $routeProvider.when('/categories', {
+        templateUrl: 'category.html',
+        controller: 'categoryController',
+        title: 'Waterloo Answers'
+    });
+
     $routeProvider.when('/profile', {
         templateUrl: 'profile.html',
         controller: 'profileController',
