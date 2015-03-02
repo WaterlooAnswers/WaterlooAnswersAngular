@@ -1,5 +1,5 @@
-<div class="navbar navbar-default">
-    <div class="container">
+<div class="navbar navbar-default navbar-custom">
+    <div class="container container-for-nav">
         <div class="navbar-header">
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                 <span class="icon-bar"></span>
@@ -8,15 +8,32 @@
             </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
+            <div class= "row" id="smaller-nav">
             <ul class="nav navbar-nav navbar-left">
                 <li ng-show="isLoggedIn()"><a href="#/profile">{{firstName()}}</a></li>
-                <li ng-show="isLoggedIn()"><a href="#/questions">Browse Questions</a></li>
-                <li ng-show="isLoggedIn()"><a href="#/ask">Ask a Question</a></li>
+                <!--<li><a href="#/questions">Browse Questions</a></li>
+                <li><a href="#/ask">Ask a Question</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-show="isLoggedIn()"><a ng-click="logout()" href>Logout</a></li>
-                <li><a href="http://www.sahiljain.ca" target="_blank">Contact</a></li>
+                <li ng-show="isLoggedOut()"><a>LOGIN</a></li>
+                <li><a href="#/about">ABOUT</a></li>
+                <li><a href="#/faq">FAQ</a></li>
+                <!--<li><a href="http://www.sahiljain.ca" target="_blank">Contact</a></li>-->
             </ul>
+        </div>
+        <div class="row navbar-inverse" id="bigger-nav">
+            <div class="container" id ="centre-shift">
+                <ul class= "nav navbar-nav" style="color:white">
+                    <li><img src ="images/WaterlooAnswersLogo.jpg" alt="Waterloo Answers logo"></li>
+                    <li><a href="#/questions">QUESTIONS</a></li>
+                    <li><a href="#/tags">TAGS</a></li>
+                    <li><a href="#/users">USERS</a></li>
+                    <li><a href="#/unanswered">UNANSWERED</a></li>
+                    <li><a href="#/ask"><font color="00ff33">ASK A QUESTION</font></a></li>
+                </ul>
+            </div>
+        </div>
         </div>
     </div>
 </div>
