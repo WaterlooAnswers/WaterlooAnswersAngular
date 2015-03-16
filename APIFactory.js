@@ -55,13 +55,12 @@ app.factory('API', function ($http) {
         return $http({
             method: 'POST',
             url: urlBase + '/questions',
-            data: $.param({
+            data: {
                 questionTitle: questionTitle,
                 questionDescription: questionDescription,
                 categoryIndex: categoryIndex,
                 token: token
-            }),
-            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }
         });
     };
 
@@ -69,12 +68,11 @@ app.factory('API', function ($http) {
         return $http({
             method: 'POST',
             url: urlBase + '/answers',
-            data: $.param({
+            data: {
                 questionId: questionId,
                 answerBody: answerBody,
                 token: token
-            }),
-            headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+            }
         });
     };
 

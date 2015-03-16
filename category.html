@@ -5,9 +5,9 @@
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="question in questions">
                     <span class="badge">{{question.numAnswers + " answer" + (question.numAnswers==1 ? "" : "s")}}</span>
-                    <a href="#/question/{{question.questionId}}"><h3 style="margin-top:0px">{{question.name}}</h3></a>
+                    <a href="#/question/{{question.questionId}}"><h3 style="margin-top:0px">{{question.questionTitle}}</h3></a>
 
-                    <p>{{question.description}}</p>
+                    <p>{{question.questionDescription}}</p>
 
                     <div class="small">
                         Asked by <a href="">{{question.askerName}}</a> in <a href="">{{question.category}}</a>
