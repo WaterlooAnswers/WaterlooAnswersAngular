@@ -5,9 +5,6 @@ app.controller('navbarController', ['$scope', 'Auth', function($scope, Auth) {
 		$scope.isLoggedIn = function(){
 			return Auth.getToken().length > 0;
 		};
-        $scope.isLoggedOut = function(){
-            return !Auth.getToken().length >0;
-        }
 		$scope.logout = function(){
 			Auth.logout();
 		};

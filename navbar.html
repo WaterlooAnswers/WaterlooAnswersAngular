@@ -11,15 +11,12 @@
             <div class= "row" id="smaller-nav">
             <ul class="nav navbar-nav navbar-left">
                 <li ng-show="isLoggedIn()"><a href="#/profile">{{firstName()}}</a></li>
-                <!--<li><a href="#/questions">Browse Questions</a></li>
-                <li><a href="#/ask">Ask a Question</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-show="isLoggedIn()"><a ng-click="logout()" href>Logout</a></li>
-                <li ng-show="isLoggedOut()"><a>LOGIN</a></li>
+                <li ng-hide="isLoggedIn()"><a>LOGIN</a></li>
                 <li><a href="#/about">ABOUT</a></li>
                 <li><a href="#/faq">FAQ</a></li>
-                <!--<li><a href="http://www.sahiljain.ca" target="_blank">Contact</a></li>-->
             </ul>
         </div>
         <div class="row navbar-inverse" id="bigger-nav">
