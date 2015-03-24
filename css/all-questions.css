@@ -1,0 +1,31 @@
+.side-info{
+	margin-top:100px;
+	margin-bottom: 20px;
+	/*margin-left:20px;*/
+}
+
+input.form-control.search{
+	border:1px, solid;
+	border-radius:6px !important;
+	padding:6%;
+	
+}
+
+.tag-list > span{
+	border-style:solid;
+	border-width:1px;
+	border-radius:5px;
+	color:grey;
+	font-family: 'Source Sans Pro', sans-serif;
+	padding-left:1.5%;
+	padding-right: 1.5%;
+}
+.tag-list >br{
+	margin-bottom:3%;
+}
+
+.input-group-btn{
+	position:relative;
+	left: -20px;
+	border:none;
+}

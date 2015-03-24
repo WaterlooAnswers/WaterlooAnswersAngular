@@ -1,7 +1,7 @@
 <div class="container">
-    <div class="page-header"><h1>Questions</h1></div>
     <div class="row">
-        <div class="col-lg-10 col-lg-offset-1">
+        <div class="col-md-8">
+            <div class="page-header"><h1>Questions</h1></div>
             <ul class="nav nav-pills text-center">
                 <li ng-class="{active: isActive(1)}"><a href ng-click="switchTab(1)">Most Recent</a></li>
                 <li ng-class="{active: isActive(2)}"><a href ng-click="switchTab(2)">Most Favourited</a></li>
@@ -28,6 +28,35 @@
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="col-md-4 side-info">
+            <span class="side-text">
+                <strong>Waterloo Answers</strong> is a peer-to-peer forum forum dedicated to helping university students by answering any questions they might have about courses, finances, residence and more.
+                <br>
+                Before posting a question, please view the <strong>guidelines</strong>, and search for the question.
+            </span>
+            <div id="search-question">
+                <h3>Search</h3>
+                <hr>
+                <div class="input-group">
+                 <input type="text" class="form-control search" placeholder="Search for..." style="background:url('images/search-icon.png') no-repeat right;">
+            </div>
+                
+            </div>
+            <div id ="tags">
+                <h3> Tags</h3>
+                <hr>
+                <div class="tag-list">
+                    <span>ECE 124 </span><br>
+                    <span>SE 212 </span><br>
+                    <span>CS 241 </span><br>
+                    <span>ECE 105</span><br>
+                    <span>co-op </span><br>
+                    <span>integrals</span><br>
+                    <span>phase diagrams</span><br>
+                    <span>cooking </span><br>
+                </div>
+            </div>
         </div>
     </div>
 </div>
