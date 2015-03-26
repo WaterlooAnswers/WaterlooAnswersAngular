@@ -1,33 +1,44 @@
 <div class="container">
-    <div class="row">
+    <div class="row all-content">
         <div class="col-md-8">
-            <div class="page-header"><h1>Questions</h1></div>
-            <ul class="nav nav-pills text-center">
-                <li ng-class="{active: isActive(1)}"><a href ng-click="switchTab(1)">Most Recent</a></li>
-                <li ng-class="{active: isActive(2)}"><a href ng-click="switchTab(2)">Most Favourited</a></li>
-                <li ng-class="{active: isActive(3)}"><a href ng-click="switchTab(3)">View Categories</a></li>
-            </ul>
-            <br>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="category in categories">
-                    <a href="#/categories?categoryName={{category.categoryName}}"><h3 style="margin-top:0px">
-                        {{category.categoryName}}</h3></a>
-                </li>
-            </ul>
-            <ul class="list-group">
-                <li class="list-group-item" ng-hide="categories" ng-repeat="question in questions">
-                    <span class="badge">{{question.numAnswers + " answer" + (question.numAnswers==1 ? "" : "s")}}</span>
-                    <a href="#/question/{{question.questionId}}"><h3 style="margin-top:0px">{{question.name}}</h3></a>
-
-                    <p>{{question.description}}</p>
-
-                    <div class="small">
-                        Asked by <a href="">{{question.askerName}}</a> in <a
-                            href="#/categories?categoryName={{question.category}}">{{question.category}}</a>
-                        <time class="timeago" datetime="">{{question.timeAsked | timeAgo}}</time>
+            <div class="page-header">
+                <h2>All Questions</h2>
+            </div>
+            <div id="question-list">
+                <div class="question-overview" id="unique">
+                    <div class="summary">
+                        <h3><a href="" >How do I find the phase angle of an AC current from its equation?</a></h3>
+                        <div class="asker-details">
+                            <a href="">sahiljain</a>
+                            <span class="relative-time">5 min ago</span>
+                        </div>
+                        <div class="tags">
+                            <span>ECE 124</span>
+                            <span>circuits</span>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                    <div onclick="" class="question-stats">
+                        <div class="votes">
+                            <div class="counts">
+                                <span title="12 votes">12</span>
+                            </div>
+                            <div>votes</div>
+                        </div>
+                        <div class="answers">
+                            <div class="counts">
+                                <span title="2 answers">2</span>
+                            </div>
+                            <div>answers</div>
+                        </div>
+                        <div class="views">
+                            <div class="counts">
+                                <span title="89 views">89</span>
+                            </div>
+                            <div>views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-4 side-info">
             <span class="side-text">

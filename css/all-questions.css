@@ -1,7 +1,11 @@
+.all-content{
+	margin:2%;
+}
+
 .side-info{
-	margin-top:100px;
-	margin-bottom: 20px;
-	/*margin-left:20px;*/
+	margin-top:7.5%;
+	/*margin-bottom: 20px;
+	margin-left:20px;*/
 }
 
 input.form-control.search{
@@ -11,7 +15,7 @@ input.form-control.search{
 	
 }
 
-.tag-list > span{
+.tag-list > span, .tags>span{
 	border-style:solid;
 	border-width:1px;
 	border-radius:5px;
@@ -29,3 +33,26 @@ input.form-control.search{
 	left: -20px;
 	border:none;
 }
+
+.asker-details,.tags{
+	display:inline;
+}
+
+.question-stats{
+	float:right;
+	vertical-align:top;
+	margin-left:10px;
+}
+
+.votes,.answers,.views{
+	display:inline-block;
+	min-width: 38px;
+	text-align: center;
+	margin-right: 3px;
+}
+
+.summary{
+	width:70%;
+	float:left;
+}
+
