@@ -1,7 +1,25 @@
 .all-content{
 	margin:2%;
 }
-
+a{
+	color:black;
+}
+.page-header>h2{
+	display:inline;
+	position:relative;
+}
+#stats-header{
+	color:grey;
+	font-size:12px;
+	float:right;
+	display:inline;
+	margin-bottom:0px;
+	text-align:right;
+}
+#stats-header>span{
+	padding-top:12px;
+	margin-left:12px;
+}
 .side-info{
 	margin-top:7.5%;
 	/*margin-bottom: 20px;
@@ -37,6 +55,13 @@ input.form-control.search{
 .asker-details,.tags{
 	display:inline;
 }
+.relative-time,.tags{
+	color:grey;
+	margin-left:12px;
+}
+.tags>span{
+	margin-right:5px;
+}
 
 .question-stats{
 	float:right;
@@ -48,11 +73,34 @@ input.form-control.search{
 	display:inline-block;
 	min-width: 38px;
 	text-align: center;
-	margin-right: 3px;
+	color:white;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-left: 5px;
+	background:lightgrey;
+	padding-top:12px;
+	padding-bottom:0px;
+	padding-left: 2px;
+	padding-right:2px;
+	border-radius:50%;
+	width:65px;
+	height:65px;
+}
+.desc{
+	font-size: 12px;
+}
+.views{
+	background:black;
+}
+.counts{
+	font-weight: bold;
+	font-size:16px;
+}
+.summary{
+	width:60%;
+	float:left;
 }
 
-.summary{
-	width:70%;
-	float:left;
+.summary >h3{
+	margin-top:0px;
 }
 
