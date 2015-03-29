@@ -2,7 +2,7 @@
     <div class="row all-content">
         <div class="col-md-8">
             <div class="page-header">
-                <h2>All Questions</h2>
+               <h2>All Questions</h2>
                 <div id= "stats-header">
                 <span>ACTIVE</span>
                 <span>NEWEST</span>
@@ -13,10 +13,10 @@
             <div id="question-list">
                 <div class="question-overview" id="unique">
                     <div class="summary">
-                        <h3><a href="" >How do I find the phase angle of an AC current from its equation?</a></h3>
+                        <h3><a href="#/question/{{question.questionId}}" >{{question.questionTitle}}</a></h3>
                         <div class="asker-details">
-                            <a href="">sahiljain</a>
-                            <span class="relative-time">5 min ago</span>
+                            <a href="">{{question.askerName}}</a>
+                            <span class="relative-time"><time class="timeago" datetime="">{{question.timeAsked | timeAgo}}</time></span>
                         </div>
                         <div class="tags">
                             <span>ECE 124</span>
