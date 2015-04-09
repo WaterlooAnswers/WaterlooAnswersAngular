@@ -10,8 +10,8 @@
             </div>
             </div>
             
-            <div id="question-list">
-                <div class="question-overview" id="unique">
+            <div id="question-list" class="container">
+                <div class="question-item-overview container" ng-repeat="question in questions" >
                     <div class="summary">
                         <h3><a href="#/question/{{question.questionId}}" >{{question.questionTitle}}</a></h3>
                         <div class="asker-details">
@@ -23,28 +23,29 @@
                             <span>circuits</span>
                         </div>
                     </div>
-                    <div onclick="" class="question-stats">
+                    <div  class="question-stats">
                         <div class="votes">
                             <div class="counts">
-                                <span title="12 votes">12</span>
+                                <span>12</span>
                             </div>
                             <div class="desc">votes</div>
                         </div>
                         <div class="answers">
                             <div class="counts">
-                                <span title="2 answers">2</span>
+                                <span >2</span>
                             </div>
                             <div class="desc">answers</div>
                         </div>
                         <div class="views">
                             <div class="counts">
-                                <span title="89 views">89</span>
+                                <span>89</span>
                             </div>
                             <div class="desc">views</div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
         <div class="col-md-4 col-xs-12 side-info">
             <span class="side-text">
