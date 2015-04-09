@@ -46,7 +46,33 @@ width:100%;
 }
 
 #centre-shift{
-	padding: 0% 8% 0% 13%;
+	margin: 0% 5% 0% 0%;
+}
+#centre-shift > .navbar-right{
+	float:none;
+}
+@media (max-width:767px){
+	#smaller-nav *, #centre-shift *{
+		display:inline-block;
+	}
+
+	#smaller-nav,#centre-shift{
+		padding-left:8%;
+	}
+	#bigger-nav{
+padding:0%;
+	}
+	.navbar-left, #centre-shift > .navbar-right{
+		float:left;
+	}
+	.navbar-right, #centre-shift > .navbar-right {
+		float:right;
+	}
+	#centre-shift{
+	padding: 0% 5% 0% 8%;
+	
+	}
+	
 }
 img{
 	float:left;

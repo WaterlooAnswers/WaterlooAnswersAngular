@@ -29,6 +29,16 @@ a{
 	/*margin-bottom: 20px;
 	margin-left:20px;*/
 }
+@media (max-width:767px){
+	.side-info{
+		margin-top:15%;
+	}
+}
+@media (max-width:455px){
+	#stats-header{
+		display:none;
+	}
+}
 
 input.form-control.search{
 	border:1px, solid;
