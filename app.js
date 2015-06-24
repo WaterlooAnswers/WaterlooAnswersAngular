@@ -21,62 +21,6 @@ https://github.com/toddmotto/angularjs-styleguide
         'flash'
     ]);
 
-function config($routeProvider) {
-    $routeProvider.when('/login', {
-        templateUrl: 'login-form.html',
-        controller: 'LoginFormCtrl as LoginForm',
-        title: 'Login to Waterloo Answers'
-    });
-
-    $routeProvider.when('/signup', {
-        templateUrl: 'signup.html',
-        controller: 'SignUpCtrl as SignUp',
-        title: 'Sign Up for Waterloo Answrs'
-    });
-
-    $routeProvider.when('/', {
-        templateUrl: 'questions.html',
-        controller: 'QuestionsCtrl as Questions',
-        title: 'View Questions'
-    });
-
-    $routeProvider.when('/ask', {
-        templateUrl: 'askquestion.html',
-        controller: 'AskCtrl as Ask',
-        title: 'Ask a Question'
-    });
-
-    $routeProvider.when('/question/:questionId', {
-        templateUrl: 'singlequestion.html',
-        controller: 'QuestionCtrl as Question',
-        title: 'Waterloo Answers'
-    });
-
-    $routeProvider.when('/categories', {
-        templateUrl: 'category.html',
-        controller: 'CategoryCtrl as Category',
-        title: 'Waterloo Answers'
-    });
-
-    $routeProvider.when('/profile', {
-        templateUrl: 'profile.html',
-        controller: 'ProfileCtrl as Profile',
-        title: 'Your Profile'
-    });
-
-    $routeProvider.otherwise({
-        redirectTo: '/'
-    });
-}
-
-function run ($location, $rootScope) {
-    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-        if (current.hasOwnProperty('$$route')) {
-            $rootScope.title = current.$$route.title;
-        }
-    });
-}
-
 function NavbarCtrl ($scope, Auth) {
     var vm = this;
 
@@ -257,6 +201,70 @@ function navbar(){
 		templateUrl:'navbar.html'
 	};
 };
+
+
+/*
+config and run placed last in the app file
+as to not cause cluttering for other necessary
+functions
+*/
+
+
+function config($routeProvider) {
+    $routeProvider.when('/login', {
+        templateUrl: 'login-form.html',
+        controller: 'LoginFormCtrl as LoginForm',
+        title: 'Login to Waterloo Answers'
+    });
+
+    $routeProvider.when('/signup', {
+        templateUrl: 'signup.html',
+        controller: 'SignUpCtrl as SignUp',
+        title: 'Sign Up for Waterloo Answrs'
+    });
+
+    $routeProvider.when('/', {
+        templateUrl: 'questions.html',
+        controller: 'QuestionsCtrl as Questions',
+        title: 'View Questions'
+    });
+
+    $routeProvider.when('/ask', {
+        templateUrl: 'askquestion.html',
+        controller: 'AskCtrl as Ask',
+        title: 'Ask a Question'
+    });
+
+    $routeProvider.when('/question/:questionId', {
+        templateUrl: 'singlequestion.html',
+        controller: 'QuestionCtrl as Question',
+        title: 'Waterloo Answers'
+    });
+
+    $routeProvider.when('/categories', {
+        templateUrl: 'category.html',
+        controller: 'CategoryCtrl as Category',
+        title: 'Waterloo Answers'
+    });
+
+    $routeProvider.when('/profile', {
+        templateUrl: 'profile.html',
+        controller: 'ProfileCtrl as Profile',
+        title: 'Your Profile'
+    });
+
+    $routeProvider.otherwise({
+        redirectTo: '/'
+    });
+}
+
+function run ($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        if (current.hasOwnProperty('$$route')) {
+            $rootScope.title = current.$$route.title;
+        }
+    });
+}
 
 angular
     .module("mainApp")
